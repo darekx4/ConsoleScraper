@@ -32,13 +32,13 @@ class AcmeScraperService
         }, range(0, $packageNames->length - 1));
     }
 
-    public function getTitle(DOMXPath $xpath, int $i): ?string
+    public function getTitle(DOMXPath $xpath, int $i): string
     {
         $title = $xpath->query("//section[@id='subscriptions']//h3");
         return $title->item($i)->nodeValue;
     }
 
-    public function getDescription(DOMXPath $xpath, int $i): ?string
+    public function getDescription(DOMXPath $xpath, int $i): string
     {
         $description = $xpath->query("//div[@class='package-description']");
         return $description->item($i)->nodeValue;
