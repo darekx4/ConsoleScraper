@@ -16,7 +16,6 @@ class ProductOptionsScraperCommandTest extends TestCase
         $application = new Application();
         $application->add(new ProductOptionsScraperCommand());
 
-        // Create a new tester with the greet command
         $command = $application->find('app:scrape-product-options');
         $commandTester = new CommandTester($command);
         $commandTester->execute([
@@ -41,7 +40,6 @@ class ProductOptionsScraperCommandTest extends TestCase
         $application = new Application();
         $application->add(new ProductOptionsScraperCommand());
 
-        // Create a new tester with the greet command
         $command = $application->find('app:scrape-product-options');
         $commandTester = new CommandTester($command);
         $commandTester->execute([

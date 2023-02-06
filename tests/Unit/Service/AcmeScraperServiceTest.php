@@ -11,20 +11,20 @@ class AcmeScraperServiceTest extends TestCase
 {
 
     public function testGetTitle()
-{
-    $html = <<<HTML
+    {
+        $html = <<<HTML
          <section id="subscriptions">
                 <h3>Product 1</h3>
                 <h3>Product 2</h3>
          </section>
     HTML;
 
-    // Stop here and mark this test as incomplete.
-    $this->markTestIncomplete(
-        'HTML5 is not supported by libxml2, therefore any HTML5 - eg. section tag will fail.'
-    );
+        // Stop here and mark this test as incomplete.
+        $this->markTestIncomplete(
+            'HTML5 is not supported by libxml2, therefore any HTML5 - eg. section tag will fail.'
+        );
 
-}
+    }
 
     public function testGetDescription()
     {
