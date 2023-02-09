@@ -22,10 +22,10 @@ class AcmeScraperServiceTest extends TestCase
         $options = $scraper->proceed();
 
         $expected = new Product();
-        $expected->title = 'Basic: 500MB Data - 12 Months';
-        $expected->description = 'Up to 500MB of data per monthincluding 20 SMS(5p / MB data and 4p / SMS thereafter)';
-        $expected->price = 5.99;
-        $expected->discount = 0.0;
+        $expected->title = 'Optimum: 24GB Data - 1 Year';
+        $expected->description = 'Up to 12GB of data per year including 480 SMS(5p / MB data and 4p / SMS thereafter)';
+        $expected->price = 174.0;
+        $expected->discount = 17.9;
 
         $this->assertEquals($expected, $options[0]);
     }

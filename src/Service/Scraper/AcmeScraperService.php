@@ -22,7 +22,7 @@ class AcmeScraperService
         $packageNames = $xpath->query("//div[@class='package-name']");
         $packagePrices = $xpath->query("//div[@class='package-price']");
 
-        return array_map(function ($i) use ($xpath, $packagePrices) {
+        $products = array_map(function ($i) use ($xpath, $packagePrices) {
             $product = new Product();
             $product->title = $this->getTitle($xpath, $i);
             $product->description = $this->getDescription($xpath, $i);
@@ -30,6 +30,12 @@ class AcmeScraperService
             $product->discount = $this->getDiscount($xpath, $packagePrices, $i);
             return $product;
         }, range(0, $packageNames->length - 1));
+
+        usort($products, function($a, $b) {
+            return $b->price <=> $a->price;
+        });
+
+        return $products;
     }
 
     public function getTitle(DOMXPath $xpath, int $i): string

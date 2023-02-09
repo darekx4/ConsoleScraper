@@ -32,7 +32,7 @@ class ProductOptionsScraperCommandTest extends TestCase
         $this->assertTrue(json_last_error() === JSON_ERROR_NONE);
 
         // Do we have data?
-        $this->assertStringContainsString("500MB Data", $output[0]->title);
+        $this->assertStringContainsString("24GB Data", $output[0]->title);
     }
 
     public function testCommandWorksWithNoSupportedCompany(): void
